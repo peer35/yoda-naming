@@ -1,10 +1,28 @@
+"""
+Title:
+Author: Peter Vos
+
+Usage:
+
+(C) Peter Vos, VU Amsterdam, 2021. Licenced for use under the GNU GPL 3.0
+
+Rename config.template.py to config.py and set API key and password.
+
+# Input
+Organizational Unit names and hierarchy retrieved from Pure API.
+
+# Output:
+pure_ou.json
+pure_list.json // same list but Human readable
+
+"""
 import json
 
 from pure.config import PURE_APIKEY, PURE_USERNAME, PURE_PASSWORD, PURE_ORGANISATIONALUNITS_URL
 import requests
 import requests_cache
 
-# https://research.vu.nl/ws/api/518/api-docs/index.html#!/organisational45units/listOrganisationalUnits
+# https://research.vu.nl/ws/api/520/api-docs/index.html#!/organisational45units/listOrganisationalUnits
 
 #requests_cache.install_cache(cache_name='pure_ou_requests_cache', allowable_methods=('GET', 'POST'))
 
