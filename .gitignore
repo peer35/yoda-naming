@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 config.py
+yoda_naming.wpr
+yoda_naming.wpu 
