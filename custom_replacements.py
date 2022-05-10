@@ -3,6 +3,11 @@ import collections
 # custom replacements, this dictionary has custom replacements
 custom_repl_set1 = collections.OrderedDict(
     {
+        'Oral Regenerative Medicine (ORM)' : 'ORM',
+        'Oral Infections and Inflammation (OII)' : 'OII',
+        'World Health Organization (WHO) Collaborating Center' : 'WHOCC',
+        'Communication Science' : 'cosc',
+        'OWI (ACTA)' : 'OWI',        
         'Mathematics': 'Math',
         'Philosophy': 'Phil',
         'Sociology': 'Socio',
@@ -11,24 +16,20 @@ custom_repl_set1 = collections.OrderedDict(
         'Marketing': 'Mrk',
         'Economics': 'Econ',
         'LaserLaB': 'Laser',
-        'Computer Science': 'csci',
-        'Oral Regenerative Medicine (ORM)' : 'ORM',
-        'Oral Infections and Inflammation (OII)' : 'OII',
-        'OWI (ACTA)' : 'OWI',
+ #       'Computer Science': 'cs',
+        ' for ': ' ',
+        ' of ': ' ',
+        ' and ': ' ',
         '!': '',
         '-': '',
         '_': '',
         '(': '',
         ')': '',
         '+': '',
-        '&': 'and',
-        ' (WHO) ': ' ',
-        ' for ': ' ',
-        ' of ': ' ',
-        ' and ': ' ',
+        '&': ' ',
     }
 )
 
 
 # if a key should be ignored then it must be added to this list
-custom_ignore_set1 = ['University Library']
+custom_ignore_set1 = ['University Library','Executive board Vrije Universiteit']

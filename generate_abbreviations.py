@@ -29,15 +29,21 @@ import os, json, pprint
 def get_data(data_input_name, cDir, expressions):
     with open(os.path.join(cDir, data_input_name), 'r') as F:
         orgdata = json.load(F)
+    
+    if os.path.exists(os.path.join(cDir, '_abbr_list_previous.json')):
+        with open(os.path.join(cDir, '_abbr_list_previous.json'), 'r') as F:
+            prev_abbr_list = tuple(json.load(F))
+    else:
+        prev_abbr_list = ()
 
     output_data = {'Acronymns': []}
     for exp in expressions:
         output_data[exp] = {}
 
-    return orgdata, output_data
+    return orgdata, output_data, prev_abbr_list
 
 
-def make_acronymns(branch, out, expr, key, acro_repl, key_ignore):
+def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list):
     for e in branch:
         if branch['name'] not in key_ignore and e == key and branch[key] in expr:
             acro = acronize(branch['name'], acro_repl)
@@ -45,11 +51,14 @@ def make_acronymns(branch, out, expr, key, acro_repl, key_ignore):
                 print('Duplicate acronym', acro)
                 # out['Acronymns'].insert(0, (acro, branch['name']))
                 acro = acronize(branch['name'], acro_repl, duplicate=True)
+            if acro.lower() not in prev_abbr_list:
+                print('New Acronymn add:', acro)
+                
             out['Acronymns'].append(acro)
             out[branch[key]][branch['name']] = acro
         elif e == 'children':
             for c in branch['children']:
-                make_acronymns(c, out, expr, key, acro_repl, key_ignore)
+                make_acronymns(c, out, expr, key, acro_repl, key_ignore, prev_abbr_list)
 
 
 def acronize(words, replacements, duplicate=False):
@@ -85,8 +94,13 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
             for k in output_data[expr]:
                 output_data[expr][k] = output_data[expr][k].lower()
 
+    # dumps the entire output dataset
     with open(output_file_name + '.json', 'w') as F:
         json.dump(output_data, F, indent=' ')
+        
+    # stored the last list of abbreviations to detect new ones in each run
+    with open('_abbr_list_previous.json','w') as F:
+        json.dump([a.lower() for a in sorted(output_data['Acronymns'])], F)
 
     pprint.pprint(output_data)
 
@@ -114,13 +128,13 @@ if __name__ == '__main__':
     expressions = ['Department', 'Research Institute']
     searchkey = 'term'
 
-
     # get and initialise
-    orgdata, output_data = get_data(data_input_name, cDir, expressions)
+    orgdata, output_data, prev_abbr_list = get_data(data_input_name, cDir, expressions)
+    
 
     # find and acronize
     make_acronymns(
-        orgdata, output_data, expressions, searchkey, custom_repl, custom_ignr
+        orgdata, output_data, expressions, searchkey, custom_repl, custom_ignr, prev_abbr_list
     )
 
 

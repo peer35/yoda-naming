@@ -19,9 +19,9 @@
   "clue",
   "cncr",
   "cndp",
+  "cosc",
   "cps",
   "cs",
-  "csci",
   "dpl",
   "eap",
   "econ",
@@ -31,7 +31,6 @@
   "egs",
   "eh",
   "es",
-  "ebvu",
   "fin",
   "hms",
   "hs",
@@ -69,10 +68,9 @@
   "tls",
   "tt",
   "vbs",
-  "whowcc"
+  "whocc"
  ],
  "Department": {
-  "Executive board Vrije Universiteit": "ebvu",
   "Economics": "econ",
   "Management and Organisation": "mo",
   "Marketing": "mrk",
@@ -84,7 +82,7 @@
   "Operations Analytics": "oa",
   "Ethics, Governance and Society": "egs",
   "Econometrics and Data Science": "eds",
-  "Communication Science": "cs",
+  "Communication Science": "cosc",
   "Social and Cultural Anthropology": "sca",
   "Organization Sciences": "os",
   "Sociology": "socio",
@@ -113,7 +111,7 @@
   "Physics and Astronomy": "pa",
   "History and Social Aspects of Science": "hsas",
   "Chemistry and Pharmaceutical Sciences": "cps",
-  "Computer Science": "csci",
+  "Computer Science": "cs",
   "Center for Neurogenomics and Cognitive Research": "cncr",
   "Athena Institute": "ai",
   "Health Sciences": "hs",
@@ -143,6 +141,6 @@
   "Amsterdam Public Health": "aph",
   "KIN Center for Digital Innovation": "kcdi",
   "Centre for International Cooperation": "cic",
-  "World Health Organization (WHO) Collaborating Center": "whowcc"
+  "World Health Organization (WHO) Collaborating Center": "whocc"
  }
 }
