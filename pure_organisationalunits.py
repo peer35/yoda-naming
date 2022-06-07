@@ -17,10 +17,11 @@ pure_list.json // same list but Human readable
 
 """
 import json
+import pprint
 
-from pure.config import PURE_APIKEY, PURE_USERNAME, PURE_PASSWORD, PURE_ORGANISATIONALUNITS_URL
+from config import PURE_APIKEY, PURE_USERNAME, PURE_PASSWORD, PURE_ORGANISATIONALUNITS_URL
 import requests
-import requests_cache
+#import requests_cache
 
 # https://research.vu.nl/ws/api/520/api-docs/index.html#!/organisational45units/listOrganisationalUnits
 
@@ -82,11 +83,11 @@ def get_all():
                 if 'parents' in item:
                     for parent in item['parents']:
                         parents.append(parent['uuid'])
-                if (term not in ['Research Programme', 'Subdepartment']):
-                    list[uuid] = {}
-                    list[uuid]['name'] = name
-                    list[uuid]['term'] = term
-                    list[uuid]['parents'] = parents
+                #if (term not in ['Research Programme', 'Subdepartment']):
+                list[uuid] = {}
+                list[uuid]['name'] = name
+                list[uuid]['term'] = term
+                list[uuid]['parents'] = parents
     return list
 
 
@@ -115,6 +116,7 @@ def create_dict_tree(uuid):
 
 
 list = get_all()
+pprint.pprint(list)
 for uuid, v in list.items():
     list[uuid]['children'] = find_children(list, uuid)
 
