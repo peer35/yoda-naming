@@ -1,0 +1,102 @@
+Naming Conventions Project Folders
+
+In order to create a clear overview of the tool usage by different faculties and departments, it is preferable the naming conventions in use are identical over various tools provided by VU Library and IT.
+The form chosen is as follows; The faculty acronym, followed by the department acronym, followed by the title of the project. Each segment is separated by an underscore “_”, see template below:
+
+[Faculty Acronym]_[Department Arconym]_[Project Title]
+
+Example: BETA_CPS_xxx
+
+Adding Acronyms to the List
+
+If the faculty or department is missing add them to the list. The Faculties tend to have a predetermined acronym, therefore do not create your own interpretation.
+If a department does not have an acronym, check the naming convention in Pure to determine the most logical acronym and add that to the list below, in order to create consistency in the names in use.
+
+# Faculty
+Faculty of Behavioural and Movement Sciences (FGB)
+Faculty of Humanities (FGW)
+Faculty of Law (RCH)
+Faculty of Religion and Theology (FRT)
+Faculty of Social Sciences (FSW)
+Faculty of Science (BETA)
+School of Business and Economics (SBE)
+
+
+# Department
+Academic Center for Education, Sport and Health [ACESH]
+Accounting [ACC]
+Art and Culture, History, Antiquity [ACHA]
+Athena Institute [AI]
+Beliefs and Practices [BEPR]
+Biological Psychology [BP]
+Center for Neurogenomics and Cognitive Research [CNCR]
+Chemistry and Pharmaceutical Sciences [CPS]
+Clinical, Neuro- & Developmental Psychology [CNDP]
+Clinical Psychology [CP]
+Communication Science [CS]
+Computer Science [CSCI]
+Constitutional and Administrative Law [CAL]
+Criminal Law and Criminology [CLC]
+Criminal Law [CL]
+Criminology [CRIM]
+Dutch Private Law [DPL]
+Earth Sciences [ES]
+Ecological Science [ECSC]
+Econometrics and Data Science [EDS]
+Economics [ECON]
+Educational and Family Studies [EFS]
+Environment and Health [EH]
+Ethics, Governance and Society [EGS]
+Executive board Vrije Universiteit [EBVU]
+Experimental and Applied Psychology [EAP]
+Finance [FIN]
+Health Sciences [HS]
+Health Economics and Health Technology Assessment [HEHTA]
+History and Social Aspects of Science [HSAS]
+Human Movement Sciences [HMS]
+Institute for Environmental Studies [IES]
+Kars Group (Geo- and Bioarchaeology) [KGGB]
+Knowledge, Information and Innovation [KII]
+Language, Literature and Communication [LLC]
+Legal Theory and Legal History [LTLH]
+Management and Organisation [MO]
+Marketing [MRK]
+Mathematics [MATH]
+Molecular Cell Biology [MCB]
+Notary and Tax Law [NTL]
+OWI (ACTA) [OWI]
+Operations Analytics [OA]
+Oral Infections and Inflammation (OII) [OII]
+Oral Regenerative Medicine (ORM) [ORM]
+Organization Sciences [OS]
+Philosophy [PHIL]
+Physics and Astronomy [PA]
+Political Science and Public Administration [PSPA]
+Social and Cultural Anthropology [SCA]
+Sociology [SOCIO]
+Spatial Economics [SE]
+Texts and Traditions [TT]
+Transnational Legal Studies [TLS]
+VU Business School [VBS]
+
+# Research Institute
+A-LAB [ALAB]
+AIMMS [AIMMS]
+Amsterdam Business Research Institute [ABRI]
+Amsterdam Centre for World Food Studies [ACWFS]
+Amsterdam Movement Sciences [AMS]
+Amsterdam Neuroscience [AN]
+Amsterdam Public Health [APH]
+CLUE+ [CLUE]
+Centre for International Cooperation [CIC]
+IBBA [IBBA]
+Institute for Societal Resilience [ISR]
+KIN Center for Digital Innovation [KCDI]
+Kooijmans Institute [KI]
+LEARN! [LEARN]
+LaserLaB [LASER]
+Network Institute [NI]
+Talma Institute [TAIN]
+Tinbergen Institute [TI]
+World Health Organization (WHO) Collaborating Center [WHOWCC]
+
