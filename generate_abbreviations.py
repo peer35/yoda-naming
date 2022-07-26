@@ -4,11 +4,11 @@ Author: Brett G. Olivier
 
 Usage:
 
-(C) Brett G. Olivier, VU Amsterdam, 2022. Licenced for use under the GNU GPL 3.0
+(C) Brett G. Olivier, VU Amsterdam, 2022. Licenced for use under the BSD 3 clause
 
 # These need to be defined and passed into the module methods
 
-expressions = ['Department', 'Research Institute']
+expressions = ['Department', 'Research Institute', 'Faculty']
 searchkey = 'term'
 
 output_data = {'Department' : {},
@@ -65,17 +65,21 @@ def check_for_obsolete(output_data, prev_abbr_list, obsolete_terms):
     return obsolete_terms
 
 
-def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list, obsolete_terms):
+def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list, obsolete_terms, faculty_repl_set, faculty_prefix):
     for e in branch:
+        if branch[key] == 'Faculty':
+            faculty_prefix = faculty_repl_set[branch['name']]
+            #print(faculty_prefix)  
+        
         if branch['name'] not in key_ignore and e == key and branch[key] in expr:
-            acro = acronize(branch['name'], acro_repl)
+            acro = f'{faculty_prefix}-{acronize(branch["name"], acro_repl)}'
             if acro in out['Acronymns'] or acro.lower() in obsolete_terms:
                 if acro.lower() in obsolete_terms:
-                    print('Avoiding duplication of existing obsolete term: ', acro)
+                    print('Avoiding duplication of existing obsolete term: ', acro.lower())
                 else:
-                    print('Duplicate acronym: ', acro)
-                # out['Acronymns'].insert(0, (acro, branch['name']))
-                acro = acronize(branch['name'], acro_repl, duplicate=True)
+                    print('Duplicate acronym: ', acro.lower())
+                #out['Acronymns'].insert(0, (acro, branch['name']))
+                acro = f'{faculty_prefix}-{acronize(branch["name"], acro_repl, duplicate=True)}'
             if acro.lower() not in prev_abbr_list:
                 print('New Acronymn add:', acro.lower())
             else:
@@ -84,7 +88,9 @@ def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list
             out[branch[key]][branch['name']] = acro
         elif e == 'children':
             for c in branch['children']:
-                make_acronymns(c, out, expr, key, acro_repl, key_ignore, prev_abbr_list, obsolete_terms)
+                make_acronymns(c, out, expr, key, acro_repl, key_ignore, prev_abbr_list, obsolete_terms, faculty_repl_set, faculty_prefix)
+    for fac in out['Faculty']:
+        out['Faculty'][fac] = out['Faculty'][fac].split('-')[0]
 
 
 def acronize(words, replacements, duplicate=False):
@@ -100,7 +106,7 @@ def acronize(words, replacements, duplicate=False):
             words = words.upper()
         else:
             print('\nWARNING: not sure what to do with a duplicate single name:', words)
-            raise (RuntimeWarning(), words)
+            raise(RuntimeWarning(), words)
     else:
         if not duplicate:
             words = ''.join(w[0] for w in words.split())
@@ -137,6 +143,8 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
     # for the google sheet or however we need for a form.
     with open(output_file_name + '.txt', 'w') as F:
         for expr in expressions:
+            if expr == 'Faculty':
+                continue
             F.write(f'# {expr}\n')
             for dep in sorted(output_data[expr].keys()):
                 F.write(f'{dep} [{output_data[expr][dep]}]')
@@ -149,7 +157,9 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
 if __name__ == '__main__':
     import os
     from custom_replacements import custom_repl_set1 as custom_repl
+    from custom_replacements import faculty_repl_set as faculty_repl_set
     from custom_replacements import custom_ignore_set1 as custom_ignr
+    
     cDir = os.path.dirname(os.path.abspath(os.sys.argv[0]))
 
     # File IO names
@@ -159,7 +169,7 @@ if __name__ == '__main__':
     output_file_name = 'abbreviations'
 
     # These need to be defined and passed into the module methods
-    expressions = ['Department', 'Research Institute']
+    expressions = ['Department', 'Research Institute', 'Faculty']
     searchkey = 'term'
 
     # get and initialise
@@ -168,7 +178,7 @@ if __name__ == '__main__':
 
     # find and acronize
     make_acronymns(
-        orgdata, output_data, expressions, searchkey, custom_repl, custom_ignr, prev_abbr_list, obsolete_terms
+        orgdata, output_data, expressions, searchkey, custom_repl, custom_ignr, prev_abbr_list, obsolete_terms, faculty_repl_set, 'vu'
     )
 
     # check for obsolete terms

@@ -33,3 +33,18 @@ custom_repl_set1 = collections.OrderedDict(
 
 # if a key should be ignored then it must be added to this list
 custom_ignore_set1 = ['University Library','Executive board Vrije Universiteit']
+
+# Faculty replacements
+faculty_repl_set =  collections.OrderedDict(
+    {
+             'Faculty of Dentistry (ACTA)': 'acta',
+             'Faculty of Science': 'beta',
+             'Faculty of Behavioural and Movement Sciences': 'fgb',
+             'Faculty of Humanities': 'fgw',
+             'VUmc - School of Medical Sciences': 'gnk',
+             'Faculty of Law': 'rch',
+             'Faculty of Social Sciences': 'fsw',
+             'Faculty of Religion and Theology': 'frt',
+             'School of Business and Economics': 'sbe',
+    }
+)         
