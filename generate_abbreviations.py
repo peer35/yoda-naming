@@ -1,6 +1,7 @@
 """
-Title:
+Title: Abbreviation generator for project paths on VU storage
 Author: Brett G. Olivier
+version: 0.7-alpha
 
 Usage:
 
