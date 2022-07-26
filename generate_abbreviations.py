@@ -14,6 +14,7 @@ searchkey = 'term'
 output_data = {'Department' : {},
         'Research Institute' : {},
         'Acronymns' : [],
+        'Obsolete_terms' : []
         }
 
 # custom replacements, can be empty
@@ -43,6 +44,17 @@ def get_data(data_input_name, cDir, expressions):
     return orgdata, output_data, prev_abbr_list
 
 
+def check_for_obsolete(output_data, prev_abbr_list):
+    obsolete = []
+    output_data['Acronymns'] = [a.lower() for a in sorted(output_data['Acronymns'])]
+    output_data['Obsolete_terms'] = []
+    for acr in prev_abbr_list:
+        if acr.lower() not in output_data['Acronymns']:
+            obsolete.append(acr.lower())
+            output_data['Obsolete_terms'].append(acr.lower())
+    return obsolete
+    
+
 def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list):
     for e in branch:
         if branch['name'] not in key_ignore and e == key and branch[key] in expr:
@@ -52,8 +64,9 @@ def make_acronymns(branch, out, expr, key, acro_repl, key_ignore, prev_abbr_list
                 # out['Acronymns'].insert(0, (acro, branch['name']))
                 acro = acronize(branch['name'], acro_repl, duplicate=True)
             if acro.lower() not in prev_abbr_list:
-                print('New Acronymn add:', acro)
-                
+                print('New Acronymn add:', acro.lower())
+            else:
+                print('Acronymn already exists:', acro.lower())
             out['Acronymns'].append(acro)
             out[branch[key]][branch['name']] = acro
         elif e == 'children':
@@ -86,7 +99,7 @@ def acronize(words, replacements, duplicate=False):
     return words
 
 
-def write_data(output_file_name, output_data, expressions, output_lowercase):
+def write_data(output_file_name, output_data, expressions, obsolete_terms, output_lowercase):
     if output_lowercase:
         # first we lowercase all acronyms
         output_data['Acronymns'] = [a.lower() for a in sorted(output_data['Acronymns'])]
@@ -109,7 +122,10 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
         for expr in expressions:
             F.write(f'# {expr}\n')
             for dep in sorted(output_data[expr].keys()):
-                F.write(f'{dep} [{output_data[expr][dep]}]\n')
+                F.write(f'{dep} [{output_data[expr][dep]}]')
+                if output_data[expr][dep] in obsolete_terms:
+                    F.write(f'*')
+                F.write(f'\n')
     return
 
 
@@ -138,7 +154,14 @@ if __name__ == '__main__':
     )
 
 
+    # check for obsolete terms
+    obsolete_terms = check_for_obsolete(output_data, prev_abbr_list)
+    print("Need to so something with Obsolete_terms")
+    print(obsolete_terms)
+    if len(obsolete_terms) > 0:
+        raise(RuntimeWarning)    
+
     # write data
-    write_data(output_file_name, output_data, expressions, output_lowercase=True)
+    write_data(output_file_name, output_data, expressions, obsolete_terms, output_lowercase=True)
 
 
