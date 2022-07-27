@@ -26,7 +26,7 @@ orgdata = None
 
 """
 
-import os, json, pprint
+import os, json, pprint, openpyxl
 
 def get_data(data_input_name, cDir, expressions):
     with open(os.path.join(cDir, data_input_name), 'r') as F:
@@ -60,7 +60,7 @@ def check_for_obsolete(output_data, prev_abbr_list, obsolete_terms):
         if acr not in acronew:
             obsolete_terms.append(acr)
             output_data['Obsolete_terms'].append(acr)
-    # this is a hack to get rid of term duplications which can probable be better sorted out above
+    # this is a hack to get rid of term duplications which can probably be better sorted out above
     obsolete_terms = list(set(obsolete_terms))
     output_data['Obsolete_terms'] = list(set(output_data['Obsolete_terms']))
     return obsolete_terms
@@ -119,7 +119,11 @@ def acronize(words, replacements, duplicate=False):
     return words
 
 
-def write_data(output_file_name, output_data, expressions, output_lowercase):
+def write_data(output_file_name, output_path, output_data, expressions, output_lowercase):
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    output_file_name = os.path.join(output_path, output_file_name)
+        
     if output_lowercase:
         # first we lowercase all acronyms
         output_data['Acronymns'] = [a.lower() for a in sorted(output_data['Acronymns'])]
@@ -128,7 +132,7 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
                 output_data[expr][k] = output_data[expr][k].lower()
 
     # dumps the entire output dataset
-    with open(output_file_name + '.json', 'w') as F:
+    with open(output_file_name + '-full.json', 'w') as F:
         json.dump(output_data, F, indent=' ')
         
     # store the last list of abbreviations to detect new ones in each run
@@ -140,9 +144,8 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
     with open('_abbr_list_obsolete.json','w') as F:
         json.dump(sorted(output_data['Obsolete_terms']), F)
 
-
     # for the google sheet or however we need for a form.
-    with open(output_file_name + '.txt', 'w') as F:
+    with open(output_file_name + '-menulist.txt', 'w') as F:
         for expr in expressions:
             if expr == 'Faculty':
                 continue
@@ -152,11 +155,102 @@ def write_data(output_file_name, output_data, expressions, output_lowercase):
                 if output_data[expr][dep] in output_data['Obsolete_terms']:
                     F.write(f'*')
                 F.write(f'\n')
+
+    # create an XLS workbook to record results over time, saved as sheets 
+    xls_filename = os.path.join(output_path, '_abbreviation_history.xlsx')
+    if not os.path.exists(xls_filename):
+        xls = openpyxl.Workbook()
+    else:
+        xls = openpyxl.load_workbook(filename = xls_filename)
+
+    # setup current worksheet
+    act_sheet = xls.create_sheet(title = os.path.split(output_file_name)[-1])
+    act_sheet.page_setup.fitToWidth = 1
+
+    
+    faculty_cntr = 2
+    inst_cntr = 2
+    dept_cntr = 2
+    obsolete_cntr = 2
+    col_map = {'Faculty' : 5,
+               'Research Institute' : 3,
+               'Department' : 1,
+               'Obsolete_terms' : 7}
+    
+    cells = [] 
+    cells.append(act_sheet.cell(1, 1, 'Dept. abbr.'))
+    cells.append(act_sheet.cell(1, 2,'Department'))
+    cells.append(act_sheet.cell(1, 3, 'Inst. abbr.'))
+    cells.append(act_sheet.cell(1, 4, 'Institute'))
+    cells.append(act_sheet.cell(1, 5, 'Fac. abbr.'))
+    cells.append(act_sheet.cell(1, 6, 'Faculty'))
+    cells.append(act_sheet.cell(1, 7, 'Obsolete terms'))
+    for c_ in cells:
+        c_.font = openpyxl.styles.Font(bold=True)
+        
+    
+    col_widths = [len(act_sheet['A1'].value), 
+                  len(act_sheet['B1'].value), 
+                  len(act_sheet['C1'].value),
+                  len(act_sheet['D1'].value), 
+                  len(act_sheet['E1'].value), 
+                  len(act_sheet['F1'].value), 
+                  len(act_sheet['G1'].value)]
+
+    # write data and determine max col widths
+    for expr in expressions:
+        for dep in sorted(output_data[expr].keys()):
+            if expr == 'Faculty':
+                act_sheet.cell(faculty_cntr, col_map[expr]+1, dep)
+                act_sheet.cell(faculty_cntr, col_map[expr], output_data[expr][dep])
+                if len(output_data[expr][dep]) > col_widths[4]:
+                    col_widths[4] = len(output_data[expr][dep])
+                if len(dep) > col_widths[5]:
+                    col_widths[5] = len(dep)
+                faculty_cntr += 1
+            elif expr == 'Department':
+                act_sheet.cell(dept_cntr, col_map[expr]+1, dep)
+                act_sheet.cell(dept_cntr, col_map[expr], output_data[expr][dep])
+                if len(output_data[expr][dep]) > col_widths[0]:
+                    col_widths[0] = len(output_data[expr][dep])
+                if len(dep) > col_widths[1]:
+                    col_widths[1] = len(dep)
+                dept_cntr += 1
+            elif expr == 'Research Institute':
+                act_sheet.cell(inst_cntr, col_map[expr]+1, dep)
+                act_sheet.cell(inst_cntr, col_map[expr], output_data[expr][dep])
+                if len(output_data[expr][dep]) > col_widths[2]:
+                    col_widths[2] = len(output_data[expr][dep])
+                if len(dep) > col_widths[3]:
+                    col_widths[3] = len(dep)                
+                inst_cntr += 1
+    
+    # add obsolete terms        
+    for obs in output_data['Obsolete_terms']:
+        act_sheet.cell(obsolete_cntr, col_map['Obsolete_terms'], obs)
+        obsolete_cntr += 1
+
+    sheet_col_map  = {0 : 'A',
+                1 : 'B',
+                2 : 'C',
+                3 : 'D',
+                4 : 'E',
+                5 : 'F',
+                6 : 'G',
+                }
+
+    # reformat column widths    
+    for col in range(len(col_widths)):
+        act_sheet.column_dimensions[sheet_col_map[col]].width = col_widths[col]
+                     
+    xls.save(xls_filename)
+    xls.close()
+
     return output_data
 
 
 if __name__ == '__main__':
-    import os
+    import os, time
     from custom_replacements import custom_repl_set1 as custom_repl
     from custom_replacements import faculty_repl_set as faculty_repl_set
     from custom_replacements import custom_ignore_set1 as custom_ignr
@@ -167,7 +261,9 @@ if __name__ == '__main__':
     data_input_name = 'pure_ou.json'
     # to test obsolete_terms
     #data_input_name = 'pure_ou_two_deletions.json' 
-    output_file_name = 'abbreviations'
+    output_file_name = time.strftime('%y%m%d%H%M')
+    output_path = os.path.join(cDir, 'output')
+    
 
     # These need to be defined and passed into the module methods
     expressions = ['Department', 'Research Institute', 'Faculty']
@@ -191,8 +287,9 @@ if __name__ == '__main__':
         #raise(RuntimeWarning)    
 
     # write data
-    final_output_data = write_data(output_file_name, output_data, expressions, output_lowercase=True)
+    final_output_data = write_data(output_file_name, output_path, output_data, expressions, output_lowercase=True)
     
-    pprint.pprint(final_output_data)
+    #pprint.pprint(final_output_data)
+    print('\nOutput written to: {}\\{}.*'.format(output_path, output_file_name))
 
 
