@@ -1,28 +1,18 @@
 """
 Title: Abbreviation generator for project paths on VU storage
 Author: Brett G. Olivier
-version: 0.7-alpha
+version: 0.8-alpha
 
-Usage:
+Usage (Collab): https://colab.research.google.com/drive/1ikMDIBbPMxIkiMj8MnWLTmPEgs29a66F?usp=sharing 
+Usage (Local): python3 generate_abbreviations.py
+
+Requires: openpyxl (pip install openpyxl)
 
 (C) Brett G. Olivier, VU Amsterdam, 2022. Licenced for use under the BSD 3 clause
 
-# These need to be defined and passed into the module methods
+# Data needs to be loaded from Peter's org data file (default)
 
-expressions = ['Department', 'Research Institute', 'Faculty']
-searchkey = 'term'
-
-output_data = {'Department' : {},
-        'Research Institute' : {},
-        'Acronymns' : [],
-        'Obsolete_terms' : []
-        }
-
-# custom replacements, can be empty
-custom_repl = collections.OrderedDict({})
-
-# needs to be loaded from Peter's org data file
-orgdata = None
+`data_input_name = 'pure_ou.json'`
 
 """
 
