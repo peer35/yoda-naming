@@ -631,7 +631,7 @@
     {
      "uuid": "6a016d8b-1287-4d06-813f-83b136f7f054",
      "name": "Amsterdam Centre for World Food Studies",
-     "term": "Research Institute",
+     "term": "Research Centre",
      "children": []
     },
     {
@@ -692,19 +692,19 @@
     {
      "uuid": "5fe5d922-2d6a-45da-a762-968ca7559174",
      "name": "KIN Center for Digital Innovation",
-     "term": "Research Institute",
+     "term": "Research Centre",
      "children": []
     },
     {
      "uuid": "3e433510-7407-45a5-9d38-2889c623dded",
      "name": "Centre for International Cooperation",
-     "term": "Research Institute",
+     "term": "Research Centre",
      "children": []
     },
     {
      "uuid": "814c7cfa-37ae-4e81-8319-881a557b1614",
      "name": "World Health Organization (WHO) Collaborating Center",
-     "term": "Research Institute",
+     "term": "Research Centre",
      "children": []
     },
     {
@@ -1325,7 +1325,7 @@
     },
     {
      "uuid": "285ff4a7-3374-4d4a-aa33-7df75536ef21",
-     "name": "Faculty of Dentistry (ACTA)",
+     "name": "Academic Centre for Dentistry in Amsterdam",
      "term": "Faculty",
      "children": [
       {
