@@ -686,6 +686,12 @@
        "name": "APH - Personalized Medicine",
        "term": "Research Programme",
        "children": []
+      },
+      {
+       "uuid": "fec08c5f-d8ea-4135-86ce-f3bb58454d27",
+       "name": "APH - Digital Health",
+       "term": "Research Programme",
+       "children": []
       }
      ]
     },
@@ -710,6 +716,12 @@
     {
      "uuid": "5c9d54bd-f11f-4b83-971a-b1e4a0232f6a",
      "name": "Amsterdam Sustainability Institute",
+     "term": "Research Institute",
+     "children": []
+    },
+    {
+     "uuid": "aecec92a-9efc-4470-8dc5-42f01f595b0f",
+     "name": "Amsterdam Reproduction & Development",
      "term": "Research Institute",
      "children": []
     }
