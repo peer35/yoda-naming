@@ -1337,7 +1337,7 @@
     },
     {
      "uuid": "285ff4a7-3374-4d4a-aa33-7df75536ef21",
-     "name": "Academic Centre for Dentistry in Amsterdam",
+     "name": "Academic Centre for Dentistry Amsterdam",
      "term": "Faculty",
      "children": [
       {
@@ -1743,31 +1743,6 @@
        ]
       },
       {
-       "uuid": "2f1c348d-a092-4407-a2b2-71beba417b65",
-       "name": "Environment and Health",
-       "term": "Department",
-       "children": [
-        {
-         "uuid": "e33ace55-6e7a-44ec-9db4-3df431a108d1",
-         "name": "E&H: Environmental Chemistry and Toxicology",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "61beef2f-ed31-46df-9276-8dd5d1c82cdf",
-         "name": "E&H: Environmental Bioanalytical Chemistry",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "e6a8a113-073c-4369-b31c-2f4b0771bfca",
-         "name": "E&H: Environmental Health and Toxicology",
-         "term": "Subdepartment",
-         "children": []
-        }
-       ]
-      },
-      {
        "uuid": "ec3e3fde-b1a7-401d-a7e4-51e7844fe679",
        "name": "Earth Sciences",
        "term": "Department",
@@ -1824,56 +1799,43 @@
        ]
       },
       {
-       "uuid": "a7f4755d-73ba-4349-af09-3099c7c8bc67",
-       "name": "Molecular Cell Biology",
+       "uuid": "1cbd86e4-612e-4ece-8fe8-6b83e8c85272",
+       "name": "Amsterdam Institute for Life and Environment",
        "term": "Department",
        "children": [
         {
-         "uuid": "33aa49a4-af66-4d5a-b72a-f6278d35fd4e",
-         "name": "Theoretical Life Sciences",
+         "uuid": "8a08c221-1477-4aa6-8f5c-cc91b5012d31",
+         "name": "Systems Ecology",
          "term": "Subdepartment",
          "children": []
         },
         {
-         "uuid": "bfb8e93d-424a-42d9-b73e-b07c5fd625ce",
-         "name": "Structural Biology",
+         "uuid": "50873a55-3bac-482b-bf60-03c96cab87f0",
+         "name": "Systems Biology",
          "term": "Subdepartment",
          "children": []
         },
         {
-         "uuid": "eba3b4d4-1283-4f91-814f-563dfa568230",
+         "uuid": "b037dda8-e6a7-47ee-ba24-8312c5726367",
          "name": "Molecular Microbiology",
          "term": "Subdepartment",
          "children": []
         },
         {
-         "uuid": "a650e1c5-aa24-41d8-90fc-92e72c20b8c9",
-         "name": "Molecular Cell Physiology",
+         "uuid": "92ef35d4-f552-47c8-9da6-2f2b6ea5024e",
+         "name": "Environmental Health & Toxicology",
          "term": "Subdepartment",
          "children": []
         },
         {
-         "uuid": "7f177615-b298-4312-91f3-49563e10aaea",
-         "name": "Systems Bioinformatics",
-         "term": "Subdepartment",
-         "children": []
-        }
-       ]
-      },
-      {
-       "uuid": "88865d82-e66d-49eb-aee8-d26cbf4e4a7d",
-       "name": "Ecological Science",
-       "term": "Department",
-       "children": [
-        {
-         "uuid": "e1ec6d9c-6e0f-4010-a2eb-d66669f6c489",
-         "name": "Animal Ecology",
+         "uuid": "3da1fc21-0d50-4eb4-852f-db93e3dc0429",
+         "name": "Ecology & Evolution",
          "term": "Subdepartment",
          "children": []
         },
         {
-         "uuid": "f072f4a8-fe29-49ac-81dd-2732479279ef",
-         "name": "Systems Ecology",
+         "uuid": "10799bf8-dff7-4ee4-88c0-6e77ccb3ade2",
+         "name": "Chemistry for Environment & Health",
          "term": "Subdepartment",
          "children": []
         }

@@ -19,7 +19,7 @@ pure_list.json // same list but Human readable
 import json
 import pprint
 
-from config import PURE_APIKEY, PURE_USERNAME, PURE_PASSWORD, PURE_ORGANISATIONALUNITS_URL
+from config import PURE_APIKEY, PURE_ORGANISATIONALUNITS_URL
 import requests
 #import requests_cache
 
@@ -44,8 +44,7 @@ def _do_postrequest(data, size=10, offset=0):
     headers = {"Content-Type": "application/json", 'Accept': 'application/json'}
     payload = {'apiKey': PURE_APIKEY, 'size': size, 'offset': offset}
 
-    res = requests.post(PURE_ORGANISATIONALUNITS_URL, headers=headers, params=payload, data=data,
-                        auth=(PURE_USERNAME, PURE_PASSWORD))
+    res = requests.post(PURE_ORGANISATIONALUNITS_URL, headers=headers, params=payload, data=data)
     try:
         cached = res.from_cache
     except:

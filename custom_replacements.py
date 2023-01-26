@@ -37,7 +37,7 @@ custom_ignore_set1 = ['University Library','Executive board Vrije Universiteit']
 # Faculty replacements
 faculty_repl_set =  collections.OrderedDict(
     {
-             'Academic Centre for Dentistry in Amsterdam': 'acta',
+             'Academic Centre for Dentistry Amsterdam': 'acta',
              'Faculty of Science': 'beta',
              'Faculty of Behavioural and Movement Sciences': 'fgb',
              'Faculty of Humanities': 'fgw',
