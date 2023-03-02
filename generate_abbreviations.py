@@ -141,7 +141,7 @@ def write_data(output_file_name, output_path, output_data, expressions, output_l
                 continue
             F.write(f'# {expr}\n')
             for dep in sorted(output_data[expr].keys()):
-                F.write(f'{dep} [{output_data[expr][dep]}]')
+                F.write(f'{dep} | {output_data[expr][dep]}')
                 if output_data[expr][dep] in output_data['Obsolete_terms']:
                     F.write(f'*')
                 F.write(f'\n')

@@ -16,6 +16,7 @@ custom_repl_set1 = collections.OrderedDict(
         'Marketing': 'Mrk',
         'Economics': 'Econ',
         'LaserLaB': 'Laser',
+        'Amsterdam Institute for Life and Environment': 'alife',
  #       'Computer Science': 'cs',
         ' for ': ' ',
         ' of ': ' ',
