@@ -13,7 +13,7 @@ Organizational Unit names and hierarchy retrieved from Pure API.
 
 # Output:
 pure_ou.json
-pure_list.json // same list but Human readable
+pure_list.txt // same list but Human readable
 
 """
 import json

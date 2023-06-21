@@ -13,12 +13,6 @@
      "name": "University Library",
      "term": "Department",
      "children": []
-    },
-    {
-     "uuid": "a69d3acd-0824-49f0-86ab-2353dccc5f61",
-     "name": "Centre for International Cooperation",
-     "term": "Research Centre",
-     "children": []
     }
    ]
   },
@@ -371,7 +365,7 @@
       },
       {
        "uuid": "15ad9b12-8fa6-46bd-9e4f-d7aa45414e27",
-       "name": "Migration Law",
+       "name": "Migration Law - programme",
        "term": "Research Programme",
        "children": []
       },
@@ -1165,7 +1159,7 @@
         },
         {
          "uuid": "ddaa6479-b4d9-4bba-bac5-9ff6030417b6",
-         "name": "Migration Law",
+         "name": "Migration Law - subdepartment",
          "term": "Subdepartment",
          "children": []
         }

@@ -1,0 +1,67 @@
+# Department
+Academic Center for Education, Sport and Health | fgb-acesh
+Accounting | sbe-acc
+Amsterdam Institute for Life and Environment | beta-aile
+Art and Culture, History, Antiquity | fgw-acha
+Athena Institute | beta-ai
+Beliefs and Practices | frt-bp
+Biological Psychology | fgb-bp
+Center for Neurogenomics and Cognitive Research | beta-cncr
+Chemistry and Pharmaceutical Sciences | beta-cps
+Clinical, Neuro- & Developmental Psychology | fgb-cndp
+Communication Science | fsw-cosc
+Computer Science | beta-cs
+Constitutional and Administrative Law | rch-cal
+Criminal Law and Criminology | rch-clc
+Dutch Private Law | rch-dpl
+Earth Sciences | beta-es
+Econometrics and Data Science | sbe-eds
+Economics | sbe-econ
+Educational and Family Studies | fgb-efs
+Ethics, Governance and Society | sbe-egs
+Experimental and Applied Psychology | fgb-eap
+Finance | sbe-fin
+Health Sciences | beta-hs
+History and Social Aspects of Science | beta-hsas
+Human Movement Sciences | fgb-hms
+Institute for Environmental Studies | beta-ies
+Kars Group (Geo- and Bioarchaeology) | beta-kggb
+Knowledge, Information and Innovation | sbe-kii
+Language, Literature and Communication | fgw-llc
+Legal Theory and Legal History | rch-ltlh
+Management and Organisation | sbe-mo
+Marketing | sbe-mrk
+Mathematics | beta-math
+Notary and Tax Law | rch-ntl
+OWI (ACTA) | acta-owi
+Operations Analytics | sbe-oa
+Oral Infections and Inflammation (OII) | acta-oii
+Oral Regenerative Medicine (ORM) | acta-orm
+Organization Sciences | fsw-os
+Philosophy | fgw-phil
+Physics and Astronomy | beta-pa
+Political Science and Public Administration | fsw-pspa
+Social and Cultural Anthropology | fsw-sca
+Sociology | fsw-socio
+Spatial Economics | sbe-se
+Texts and Traditions | frt-tt
+Transnational Legal Studies | rch-tls
+VU SBE Executive Education | sbe-vsee
+# Research Institute
+A-LAB | vu-alab
+AIMMS | vu-aimms
+Amsterdam Business Research Institute | vu-abri
+Amsterdam Movement Sciences | vu-ams
+Amsterdam Neuroscience | vu-an
+Amsterdam Public Health | vu-aph
+Amsterdam Reproduction & Development | vu-ard
+Amsterdam Sustainability Institute | vu-asi
+CLUE+ | vu-clue
+IBBA | vu-ibba
+Institute for Societal Resilience | vu-isr
+Kooijmans Institute | vu-ki
+LEARN! | vu-learn
+LaserLaB | vu-laser
+Network Institute | vu-ni
+Talma Institute | vu-tain
+Tinbergen Institute | vu-ti
