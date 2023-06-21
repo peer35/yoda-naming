@@ -131,3 +131,5 @@ dmypy.json
 config.py
 yoda_naming.wpr
 yoda_naming.wpu 
+.idea/
+
