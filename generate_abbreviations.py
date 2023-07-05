@@ -135,7 +135,8 @@ def write_data(output_file_name, output_path, output_data, expressions, output_l
         json.dump(sorted(output_data['Obsolete_terms']), F)
 
     # for the servicenow form.
-    with open(output_file_name + '-servicenow-list.txt', 'w') as F:
+    # seems easier to have a fixed name to quickly see if anything changed
+    with open(os.path.join(output_path, 'servicenow-list.txt'), 'w') as F:
         for expr in expressions:
             if expr == 'Faculty':
                 continue
