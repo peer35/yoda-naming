@@ -1,0 +1,64 @@
+acta-oii | Oral Infections and Inflammation (OII)
+acta-orm | Oral Regenerative Medicine (ORM)
+acta-owi | OWI (ACTA)
+beta-ai | Athena Institute
+beta-alife | Amsterdam Institute for Life and Environment
+beta-cncr | Center for Neurogenomics and Cognitive Research
+beta-cps | Chemistry and Pharmaceutical Sciences
+beta-cs | Computer Science
+beta-es | Earth Sciences
+beta-hs | Health Sciences
+beta-ies | Institute for Environmental Studies
+beta-kggb | Kars Group (Geo- and Bioarchaeology)
+beta-math | Mathematics
+beta-pa | Physics and Astronomy
+fgb-acesh | Academic Center for Education, Sport and Health
+fgb-bp | Biological Psychology
+fgb-cndp | Clinical, Neuro- & Developmental Psychology
+fgb-eap | Experimental and Applied Psychology
+fgb-efs | Educational and Family Studies
+fgb-hms | Human Movement Sciences
+fgw-acha | Art and Culture, History, Antiquity
+fgw-llc | Language, Literature and Communication
+fgw-phil | Philosophy
+frt-bp | Beliefs and Practices
+frt-tt | Texts and Traditions
+fsw-cosc | Communication Science
+fsw-os | Organization Sciences
+fsw-pspa | Political Science and Public Administration
+fsw-sca | Social and Cultural Anthropology
+fsw-socio | Sociology
+rch-cal | Constitutional and Administrative Law
+rch-clc | Criminal Law and Criminology
+rch-dpl | Dutch Private Law
+rch-ltlh | Legal Theory and Legal History
+rch-ntl | Notary and Tax Law
+rch-tls | Transnational Legal Studies
+sbe-acc | Accounting
+sbe-econ | Economics
+sbe-eds | Econometrics and Data Science
+sbe-egs | Ethics, Governance and Society
+sbe-fin | Finance
+sbe-kii | Knowledge, Information and Innovation
+sbe-mo | Management and Organisation
+sbe-mrk | Marketing
+sbe-oa | Operations Analytics
+sbe-se | Spatial Economics
+sbe-vsee | VU SBE Executive Education
+vu-abri | Amsterdam Business Research Institute
+vu-aimms | AIMMS
+vu-alab | A-LAB
+vu-ams | Amsterdam Movement Sciences
+vu-an | Amsterdam Neuroscience
+vu-aph | Amsterdam Public Health
+vu-ard | Amsterdam Reproduction & Development
+vu-asi | Amsterdam Sustainability Institute
+vu-clue | CLUE+
+vu-ibba | IBBA
+vu-isr | Institute for Societal Resilience
+vu-ki | Kooijmans Institute
+vu-laser | LaserLaB
+vu-learn | LEARN!
+vu-ni | Network Institute
+vu-tain | Talma Institute
+vu-ti | Tinbergen Institute

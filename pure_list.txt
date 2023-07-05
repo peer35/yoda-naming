@@ -247,7 +247,6 @@
 				 Student Lab and Education (Subdepartment)
 				 Biophysics Photosynthesis/Energy (Subdepartment)
 				 Physics of Living Systems (Subdepartment)
-				 History and Social Aspects of Science (Department)
 				 Biophotonics and Medical Imaging (Subdepartment)
 			 Chemistry and Pharmaceutical Sciences (Department)
 				 BioAnalytical Chemistry (Subdepartment)

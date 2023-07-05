@@ -134,15 +134,16 @@ def write_data(output_file_name, output_path, output_data, expressions, output_l
     with open('_abbr_list_obsolete.json','w') as F:
         json.dump(sorted(output_data['Obsolete_terms']), F)
 
-    # for the google sheet or however we need for a form.
-    with open(output_file_name + '-menulist.txt', 'w') as F:
+    # for the servicenow form.
+    with open(output_file_name + '-servicenow-list.txt', 'w') as F:
         for expr in expressions:
             if expr == 'Faculty':
                 continue
-            F.write(f'# {expr}\n')
-            for dep in sorted(output_data[expr].keys()):
-                F.write(f'{dep} | {output_data[expr][dep]}')
-                if output_data[expr][dep] in output_data['Obsolete_terms']:
+            #F.write(f'# {expr}\n')
+            # sort by abbreviation, in this case the value
+            for dep in sorted(output_data[expr].items(), key=lambda x:x[1]):
+                F.write(f'{dep[1]} | {dep[0]}')
+                if dep[1] in output_data['Obsolete_terms']:
                     F.write(f'*')
                 F.write(f'\n')
 
