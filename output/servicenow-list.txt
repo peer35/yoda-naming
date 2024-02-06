@@ -9,7 +9,6 @@ beta-cs | Computer Science
 beta-es | Earth Sciences
 beta-hs | Health Sciences
 beta-ies | Institute for Environmental Studies
-beta-kggb | Kars Group (Geo- and Bioarchaeology)
 beta-math | Mathematics
 beta-pa | Physics and Astronomy
 fgb-acesh | Academic Center for Education, Sport and Health
@@ -45,6 +44,7 @@ sbe-mrk | Marketing
 sbe-oa | Operations Analytics
 sbe-se | Spatial Economics
 sbe-vsee | VU SBE Executive Education
+vu-sea | Student & Educational Affairs
 vu-abri | Amsterdam Business Research Institute
 vu-aimms | AIMMS
 vu-alab | A-LAB

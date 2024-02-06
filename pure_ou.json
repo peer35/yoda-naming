@@ -13,6 +13,12 @@
      "name": "University Library",
      "term": "Department",
      "children": []
+    },
+    {
+     "uuid": "dce27209-25ec-438b-b0a2-d11f2035dded",
+     "name": "Student & Educational Affairs",
+     "term": "Department",
+     "children": []
     }
    ]
   },
@@ -372,6 +378,12 @@
       {
        "uuid": "e792a90d-6f10-49a7-929e-3e97b8636df8",
        "name": "Law, Markets and Behavior",
+       "term": "Research Programme",
+       "children": []
+      },
+      {
+       "uuid": "b1756526-d7c2-4290-9386-066021a97eb7",
+       "name": "Law & Technology",
        "term": "Research Programme",
        "children": []
       }
@@ -855,7 +867,7 @@
        "children": [
         {
          "uuid": "8a679a4f-2624-4016-8089-211a1258c2c3",
-         "name": "Neuromechanics",
+         "name": "Biomechanics",
          "term": "Subdepartment",
          "children": []
         },
@@ -867,19 +879,19 @@
         },
         {
          "uuid": "9df7f783-3303-44fb-ae86-d3d84125f1b1",
-         "name": "Coordination Dynamics",
+         "name": "Neurocontrol",
          "term": "Subdepartment",
          "children": []
         },
         {
          "uuid": "71b2fae6-5f93-49b5-ae5f-108a66048907",
-         "name": "Motor learning & Performance",
+         "name": "Learning and Performance",
          "term": "Subdepartment",
          "children": []
         },
         {
          "uuid": "6d1d1b18-a9f2-484b-a00d-6748356c8e2b",
-         "name": "Sensorimotor Control",
+         "name": "Prevention and Rehabilitation",
          "term": "Subdepartment",
          "children": []
         }
@@ -1712,19 +1724,6 @@
         {
          "uuid": "8a0dccaa-866d-424e-8e92-87d0f9889f4a",
          "name": "Youth and Lifestyle",
-         "term": "Subdepartment",
-         "children": []
-        }
-       ]
-      },
-      {
-       "uuid": "f0e71d86-17f5-4734-a5af-353e3ed8164d",
-       "name": "Kars Group (Geo- and Bioarchaeology)",
-       "term": "Department",
-       "children": [
-        {
-         "uuid": "5a0a147c-4fc3-4e42-ad88-98613d2d7636",
-         "name": "Geoarchaeology",
          "term": "Subdepartment",
          "children": []
         }
