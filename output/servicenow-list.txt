@@ -11,7 +11,6 @@ beta-hs | Health Sciences
 beta-ies | Institute for Environmental Studies
 beta-math | Mathematics
 beta-pa | Physics and Astronomy
-fgb-acesh | Academic Center for Education, Sport and Health
 fgb-bp | Biological Psychology
 fgb-cndp | Clinical, Neuro- & Developmental Psychology
 fgb-eap | Experimental and Applied Psychology
@@ -44,6 +43,7 @@ sbe-mrk | Marketing
 sbe-oa | Operations Analytics
 sbe-se | Spatial Economics
 sbe-vsee | VU SBE Executive Education
+vu-ia | Institutional Affairs
 vu-sea | Student & Educational Affairs
 vu-abri | Amsterdam Business Research Institute
 vu-aimms | AIMMS

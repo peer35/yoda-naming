@@ -19,6 +19,12 @@
      "name": "Student & Educational Affairs",
      "term": "Department",
      "children": []
+    },
+    {
+     "uuid": "a8474fa2-e924-4432-9df9-bdf2f267cefb",
+     "name": "Institutional Affairs",
+     "term": "Department",
+     "children": []
     }
    ]
   },
@@ -904,7 +910,7 @@
        "children": [
         {
          "uuid": "d816e402-0f6d-41d3-a994-f05f3ae35cd1",
-         "name": "Educational Studies",
+         "name": "Educational Sciences",
          "term": "Subdepartment",
          "children": []
         },
@@ -915,20 +921,14 @@
          "children": []
         },
         {
-         "uuid": "fd7b580c-6bfa-419d-ac80-d3dd76cd7a27",
-         "name": "Research and Theory in Education",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "de82af21-0f35-4927-bc9d-b99a04a02827",
-         "name": "Educational Neuroscience",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
          "uuid": "159053e3-b828-43f4-b431-991771aca879",
          "name": "Methods and Statistics",
+         "term": "Subdepartment",
+         "children": []
+        },
+        {
+         "uuid": "5d315c6e-5c9f-4b55-9a01-35b5bea926f0",
+         "name": "Teacher Academy",
          "term": "Subdepartment",
          "children": []
         }
@@ -954,31 +954,6 @@
         {
          "uuid": "308d4529-743d-4315-bdb1-a6466a6cb8c5",
          "name": "Clinical Neuropsychology",
-         "term": "Subdepartment",
-         "children": []
-        }
-       ]
-      },
-      {
-       "uuid": "0136e8cb-5bb7-499a-af40-70d68a77f01d",
-       "name": "Academic Center for Education, Sport and Health",
-       "term": "Department",
-       "children": [
-        {
-         "uuid": "b6766c4c-bfe2-4945-bd14-f669ae61f8d0",
-         "name": "Team Higher Education",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "560428a0-45b7-4b94-bca4-08da79f37126",
-         "name": "Team Secondary Education",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "1f886dd3-6fba-431e-b7b9-2289c043c9b1",
-         "name": "Team Special Educational Needs",
          "term": "Subdepartment",
          "children": []
         }
@@ -1135,12 +1110,6 @@
         {
          "uuid": "467dcd96-9d41-492a-b8ef-7d065c30be59",
          "name": "Internet Law",
-         "term": "Subdepartment",
-         "children": []
-        },
-        {
-         "uuid": "d45297cd-427d-4c6e-8e82-0533f3c7f289",
-         "name": "International Private Law",
          "term": "Subdepartment",
          "children": []
         }
